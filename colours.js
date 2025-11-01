@@ -1,5 +1,4 @@
-// colours.js
-// Index 0 = lightest shade, index 4 = darkest shade
+// 0 = lightest shade, index 4 = darkest shade
 const colours = {
   peach: ["#faae80", "#f79868", "#f58552", "#e46225", "#d74b19"],
   yellow: ["#ffe1a5", "#ffd580", "#fec54c", "#fdb737", "#e2a854"],
