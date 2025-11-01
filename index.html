@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,47 @@
     <script src="https://unpkg.com/venn.js@0.2.20/build/venn.min.js"></script>
     <title>User and Tech Docs in D3</title>
 </head>
+
 <body>
-    <h1>Starting</h1>
-    <div id="venn"></div>
+    <h1>User and Technical Documentation</h1>
+    <div id="venn-container">
+        <svg id="venn"></svg>
+    </div>
+
     <script>
         const sets = [
-            { sets: ['A'], size: 10 },
-            { sets: ['B'], size: 10 },
-            { sets: ['A','B'], size: 5 }
+            { sets: ['User Docs'], size: 10 },
+            { sets: ['Tech Docs'], size: 10 },
+            { sets: ['User Docs', 'Tech Docs'], size: 6, label: 'Dev Docs' }
         ];
-    const chart = venn.VennDiagram();
-    d3.select("#venn").datum(sets).call(chart);
+
+        function drawVenn() {
+            const width = document.getElementById("venn-container").clientWidth;
+            const height = width * 0.6;
+            const chart = venn.VennDiagram().width(width).height(height);
+
+            d3.select("#venn")
+                .attr("width", width)
+                .attr("height", height)
+                .datum(sets)
+                .call(chart);
+
+            // Style
+            d3.selectAll("path")
+                .style("fill-opacity", 0.6)
+                .style("stroke", "#1b4538")
+                .style("stroke-width", 2);
+
+            d3.selectAll("text")
+                .style("font-family", "Lato")
+                .style("fill", "#1b4538")
+                .style("font-weight", 500)
+                .style("font-size", "16px");
+        }
+
+        drawVenn();
+        window.addEventListener("resize", drawVenn);
     </script>
 </body>
+
 </html>
