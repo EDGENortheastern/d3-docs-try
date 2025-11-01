@@ -8,3 +8,20 @@ body {
   margin: 0;
   padding: 1rem;
 }
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#venn-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
