@@ -1,29 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 body {
-  font-family: 'Lato', sans-serif;
-  background-color: rgba(191, 226, 198, 0.4); /* pale green, 40% opacity */
+  font-family: "Lato", sans-serif;
+  background-color: rgba(226, 191, 216, 0.4);
   color: #1b4538;
   text-align: center;
   margin: 0;
-  padding: 1rem;
+  padding: 20px;
 }
 
 h1 {
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-weight: 900;
+  margin-bottom: 30px;
 }
 
 #venn-container {
-  width: 90%;
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
 }
 
-svg {
-  width: 100%;
-  height: auto;
-  display: block;
+#docs-list {
+  margin-top: 40px;
+}
+
+#docs-title {
+  font-weight: 700;
+}
+
+#docs-items {
+  list-style: none;
+  padding: 0;
+}
+
+#docs-items li {
+  background: #ffffffc9;
+  border: 1px solid #1b4538;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px auto;
+  width: 60%;
+  max-width: 400px;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+#docs-items li:hover {
+  background: #bfe2c6;
 }

@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Load some d3 libraries 👇 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User and Tech Docs in D3</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="colours.js"></script>
+    <script src="docs.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/venn.js@0.2.20/build/venn.min.js"></script>
-    <title>User and Tech Docs in D3</title>
+    <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -17,40 +20,10 @@
         <svg id="venn"></svg>
     </div>
 
-    <script>
-        const sets = [
-            { sets: ['User Docs'], size: 10 },
-            { sets: ['Tech Docs'], size: 10 },
-            { sets: ['User Docs', 'Tech Docs'], size: 6, label: 'Dev Docs' }
-        ];
-
-        function drawVenn() {
-            const width = document.getElementById("venn-container").clientWidth;
-            const height = width * 0.6;
-            const chart = venn.VennDiagram().width(width).height(height);
-
-            d3.select("#venn")
-                .attr("width", width)
-                .attr("height", height)
-                .datum(sets)
-                .call(chart);
-
-            // Style
-            d3.selectAll("path")
-                .style("fill-opacity", 0.6)
-                .style("stroke", "#1b4538")
-                .style("stroke-width", 2);
-
-            d3.selectAll("text")
-                .style("font-family", "Lato")
-                .style("fill", "#1b4538")
-                .style("font-weight", 500)
-                .style("font-size", "16px");
-        }
-
-        drawVenn();
-        window.addEventListener("resize", drawVenn);
-    </script>
+    <div id="docs-list">
+        <h2 id="docs-title">Click a section to see its documents</h2>
+        <ul id="docs-items"></ul>
+    </div>
 </body>
 
 </html>
