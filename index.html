@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <!-- Load some d3 libraries 👇 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/venn.js@0.2.20/build/venn.min.js"></script>
     <title>User and Tech Docs in D3</title>
 </head>
 <body>
     <h1>Starting</h1>
+    <div id="venn"></div>
+    <script>
+        const sets = [
+            { sets: ['A'], size: 10 },
+            { sets: ['B'], size: 10 },
+            { sets: ['A','B'], size: 5 }
+        ];
+    const chart = venn.VennDiagram();
+    d3.select("#venn").datum(sets).call(chart);
+    </script>
 </body>
 </html>
