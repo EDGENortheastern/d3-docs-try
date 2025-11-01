@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #bfe2c6; 
-  color: #1b4538;           
+  background-color: rgba(191, 226, 198, 0.4); /* pale green, 40% opacity */
+  color: #1b4538;
   text-align: center;
   margin: 0;
-  padding: 2rem;
+  padding: 1rem;
 }
